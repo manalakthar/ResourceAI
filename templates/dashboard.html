@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - ResourceAI{% endblock %}
+{% block content %}
+<header class="top">
+  <div>
+    <h1>Shortage map</h1>
+    <p class="muted" id="meta">Loading data...</p>
+  </div>
+  <div class="seg" id="seg">
+    <button data-type="water" class="on">Water</button>
+    <button data-type="food">Food</button>
+  </div>
+</header>
+
+<section class="cards" id="cards"></section>
+
+<section class="grid">
+  <div class="panel map-panel">
+    <div id="map"></div>
+    <div class="legend">
+      <span><i style="background:#d9534f"></i>High risk</span>
+      <span><i style="background:#e8a33d"></i>Medium</span>
+      <span><i style="background:#3f9d78"></i>Low</span>
+      <span><i class="line"></i>Suggested transfer</span>
+    </div>
+  </div>
+  <div class="panel">
+    <h2>Available vs required</h2>
+    <div class="chart-box"><canvas id="chart"></canvas></div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Suggested transfers</h2>
+  <p class="muted small">Calculated with Minimum-Cost Flow. Routes are straight-line distances, not road routes.</p>
+  <div class="scroll"><table id="tbl"></table></div>
+  <p class="small warn" id="unmet"></p>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

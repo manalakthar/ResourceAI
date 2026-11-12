@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Resource data - ResourceAI{% endblock %}
+{% block content %}
+<header class="top">
+  <div>
+    <h1>Resource data</h1>
+    <p class="muted">Balance = available - required</p>
+  </div>
+  <div class="seg">
+    <a href="?type=all" class="{{ 'on' if selected == 'all' }}">All</a>
+    <a href="?type=water" class="{{ 'on' if selected == 'water' }}">Water</a>
+    <a href="?type=food" class="{{ 'on' if selected == 'food' }}">Food</a>
+  </div>
+</header>
+<section class="panel">
+  <div class="scroll">
+  <table>
+    <tr><th>Date</th><th>Location</th><th>Type</th><th>Category</th><th>Available</th><th>Required</th><th>Balance</th><th>Status</th><th>Source</th></tr>
+    {% for r in rows %}
+    <tr>
+      <td>{{ r.date }}</td><td>{{ r.location }}</td><td>{{ r.resource_type }}</td><td>{{ r.category }}</td>
+      <td>{{ r.available_quantity }} {{ r.unit }}</td><td>{{ r.required_quantity }} {{ r.unit }}</td>
+      <td>{{ '%+d'|format(r.balance) }}</td>
+      <td><span class="badge {{ r.risk|lower }}">{{ r.status }}</span></td><td>{{ r.source }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div>
+</section>
+{% endblock %}

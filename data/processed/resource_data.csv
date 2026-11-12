@@ -1,0 +1,11 @@
+date,location,resource_type,category,unit,available_quantity,required_quantity,source
+2026-10-01,Dakshina Kannada,water,reservoir,ML,120,100,SAMPLE
+2026-10-01,Udupi,water,reservoir,ML,60,85,SAMPLE
+2026-10-01,Mysuru,water,reservoir,ML,85,95,SAMPLE
+2026-10-01,Kodagu,water,reservoir,ML,150,70,SAMPLE
+2026-10-01,Hassan,water,reservoir,ML,55,80,SAMPLE
+2026-10-01,Dakshina Kannada,food,rice,tonnes,500,420,SAMPLE
+2026-10-01,Udupi,food,rice,tonnes,300,380,SAMPLE
+2026-10-01,Mysuru,food,rice,tonnes,450,450,SAMPLE
+2026-10-01,Kodagu,food,rice,tonnes,260,200,SAMPLE
+2026-10-01,Hassan,food,rice,tonnes,210,300,SAMPLE
